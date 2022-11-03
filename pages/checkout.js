@@ -54,7 +54,14 @@ const Checkout = () => {
               Total: {currencyFormatter(total)}
             </Text>
 
-            <Button variant="outline">Confirm purchase</Button>
+            <Button
+              _hover={{
+                bg: "whiteAlpha.200",
+              }}
+              variant="outline"
+            >
+              Confirm purchase
+            </Button>
           </Stack>
         </Grid>
       </Container>

@@ -49,7 +49,7 @@ const Header = () => {
           <Text fontWeight="semibold">Ecommerce</Text>
         </Link>
 
-        <Box>
+        <Box cursor="pointer">
           <Image
             style={{
               margin: 0,
@@ -85,6 +85,9 @@ const Header = () => {
                           onClick={() => removeFromCart(product)}
                           src={chevLeft}
                           alt="chev"
+                          style={{
+                            cursor: "pointer",
+                          }}
                         />
                         <Text
                           style={{
@@ -97,6 +100,7 @@ const Header = () => {
                           onClick={() => increaseQuantity(product)}
                           style={{
                             marginTop: 0,
+                            cursor: "pointer",
                           }}
                           src={chevRight}
                           alt="chev"
@@ -115,13 +119,22 @@ const Header = () => {
 
           <DrawerFooter gap={5}>
             <Button
+              _hover={{
+                bg: "whiteAlpha.200",
+              }}
               onClick={() => clearCart()}
               variant="outline"
               hidden={cart.length > 0 ? false : true}
             >
               Clear
             </Button>
-            <Button variant="outline" hidden={cart.length > 0 ? false : true}>
+            <Button
+              _hover={{
+                bg: "whiteAlpha.200",
+              }}
+              variant="outline"
+              hidden={cart.length > 0 ? false : true}
+            >
               <Link href="/checkout">Go to Checkout</Link>
             </Button>
           </DrawerFooter>

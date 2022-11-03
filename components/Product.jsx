@@ -46,7 +46,9 @@ const Product = ({ product }) => {
         </Text>
         <Text fontWeight="bold">{currencyFormatter(product.price)}</Text>
 
-        <Button p="0" onClick={handleAddToCart} variant="outline">
+        <Button _hover={{
+          bg: "whiteAlpha.200",
+        }} p="0" onClick={handleAddToCart} variant="outline">
           Add to Cart
         </Button>
       </Stack>
