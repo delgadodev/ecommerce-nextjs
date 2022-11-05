@@ -37,7 +37,7 @@ const Product = ({ product }) => {
       ></Box>
 
       <Stack w={{ base: "50%", md: "60%" }} p={2}>
-        <Text overflow="scroll">{product.title}</Text>
+        <Text overflow="hidden">{product.title}</Text>
         <Text fontWeight="bold">{currencyFormatter(product.price)}</Text>
 
         <Button
