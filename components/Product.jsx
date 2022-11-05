@@ -4,8 +4,7 @@ import CartContext from "../context/CartContext";
 import { currencyFormatter } from "../utils/currencyFormatter";
 
 const Product = ({ product }) => {
-  const { addToCart } =
-    useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   const toast = useToast();
   const handleAddToCart = () => {
@@ -21,7 +20,7 @@ const Product = ({ product }) => {
     <Stack
       bg="whiteAlpha.200"
       w="100%"
-      height={200}
+      height="230px"
       rounded="xl"
       flexDir="row"
       color="white"
@@ -30,25 +29,25 @@ const Product = ({ product }) => {
       <Box
         roundedTopLeft="xl"
         roundedBottomLeft="xl"
-        width={{
-          base: "140px",
-          md: "200px",
-        }}
+        w={{ base: "50%", md: "40%" }}
         backgroundImage={product.image}
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
         backgroundPosition="center"
       ></Box>
 
-      <Stack w="50%" p={2}>
-        <Text overflowWrap="anywhere" overflow="hidden">
-          {product.title}
-        </Text>
+      <Stack w={{ base: "50%", md: "60%" }} p={2}>
+        <Text overflow="scroll">{product.title}</Text>
         <Text fontWeight="bold">{currencyFormatter(product.price)}</Text>
 
-        <Button _hover={{
-          bg: "whiteAlpha.200",
-        }} p="0" onClick={handleAddToCart} variant="outline">
+        <Button
+          _hover={{
+            bg: "whiteAlpha.200",
+          }}
+          p="0"
+          onClick={handleAddToCart}
+          variant="outline"
+        >
           Add to Cart
         </Button>
       </Stack>
